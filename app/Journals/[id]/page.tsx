@@ -1,15 +1,8 @@
-"use client"
 
 
-
-import { useParams } from "next/navigation"
-
-
-const page = () => {
-    const {id} = useParams()
+export default function Page({ params }: { params: { id: string } }) {
   return (
-    <div>Journal #{id}</div>
+  <p>Post: {params.id}</p>
+
   )
 }
-
-export default page
