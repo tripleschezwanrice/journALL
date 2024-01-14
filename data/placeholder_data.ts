@@ -15,6 +15,13 @@ interface Journal{
     updatedAt:string;
 }
 
+interface UserStats{
+    totalJournals : number,
+    avgCount : number,
+    lastActive: string,
+}
+
+
 function formatDate(timestamp:number) {
     const date = new Date(timestamp);
     
@@ -33,6 +40,15 @@ const exampleUser: User = {
     numJournals: 3,
     lastSeen: '2024-01-08',
 };
+
+
+const UserStat : UserStats = {
+    totalJournals : 3,
+    avgCount : 420,
+    lastActive: formatDate(Date.now()),
+}
+
+
 
 const exampleJournal: Journal[]=[
     {
@@ -58,4 +74,4 @@ const exampleJournal: Journal[]=[
 }
 ]
 
-module.exports = {exampleJournal,exampleUser}
+module.exports = {exampleJournal,exampleUser, UserStat}
