@@ -1,13 +1,22 @@
+"use client"
+
+
 import JournalLink from "@/components/JournalLink";
+import { newJournal } from "@/data/actions";
+import { useEffect, useState } from "react";
+import { useFormState } from "react-dom";
+
 
 
 
 const Page = () => {
+
+
   return (
     <div className="h-screen w-full flex justify-center">
-      <form action="" className="flex flex-col w-[80%] h-screen py-12 px-4 bg-white rounded  text-3xl">
+      <form action={newJournal} className="flex flex-col w-[80%] h-screen py-12 px-4 bg-white rounded  text-3xl">
         <input
-          name="title"
+          name="title"  
           type="text"
           placeholder="Title"
           className="w-full p-2 mb-4 rounded-none outline-none border-b-2 "

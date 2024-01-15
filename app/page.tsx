@@ -1,14 +1,11 @@
 
 import Stats from "@/components/Stats";
 import Link from "next/link";
-const {UserStat} = require('@/data/placeholder_data')
 
 
 export default function Home() {
 
   const signin = false;
-  console.log(UserStat)
-
   // console.log(exampleJournal);
   return (
     <div className=" h-screen grid justify-center items-center">
@@ -29,7 +26,7 @@ export default function Home() {
         :
         <div>
          <p className="text-5xl font-bold mb-12">Welcome Back!</p>
-         <Stats userStat={UserStat}/>
+         {/* <Stats userStat={UserStat}/> */}
         </div>
       }
      
