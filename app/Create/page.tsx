@@ -1,16 +1,13 @@
-"use client"
 
 
-import JournalLink from "@/components/JournalLink";
-import { newJournal } from "@/data/actions";
-import { useEffect, useState } from "react";
-import { useFormState } from "react-dom";
+import { getLast6, newJournal } from "@/data/actions";
+import Link from "next/link"
 
 
+const Page = async () => {
 
-
-const Page = () => {
-
+const last6 = await getLast6();
+console.log(last6)
 
   return (
     <div className="h-screen w-full flex justify-center">
@@ -18,12 +15,14 @@ const Page = () => {
         <input
           name="title"  
           type="text"
+          required
           placeholder="Title"
           className="w-full p-2 mb-4 rounded-none outline-none border-b-2 "
         />
         <textarea
           name="content"
           placeholder="Content"
+          required
           className="w-full p-2 mb-4 h-screen text-xl outline-none rounded underline-offset-8 underline"
         />
         <button
@@ -39,7 +38,21 @@ const Page = () => {
           <p className="text-xl mb-4">
             Previous Journals
           </p>
-          <JournalLink id={"3"}/>
+          
+          {
+            last6.map((journal:any)=>(
+              <Link href = {`Journals/${journal.id}`} key={journal.id} className="border-2 border-yellow-300 flex justify-between">
+                <p>
+                  {journal.title}
+                </p>
+                <p>
+                  {journal.content}
+                </p>
+
+              </Link>
+            ))
+          }
+
       </div>
     </div>
   );

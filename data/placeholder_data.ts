@@ -68,7 +68,7 @@ const exampleJournal: Journal[]=[
     {
     id:"2",
     title: "Machine Learning Project!",
-    content: "You are the best boy and the girl and the person! Nahi aur kuch nahi hai!",
+    content: "You are the best boy and the girl and the  person! Nahi aur kuch nahi hai!",
     createdAt:formatDate(Date.now()),
     updatedAt:formatDate(Date.now()),
 }

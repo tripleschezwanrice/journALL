@@ -1,6 +1,7 @@
-import { getJournals } from "@/data/actions"
 
-
+import { deleteById, getJournals } from "@/data/actions"
+import { TrashIcon } from "@heroicons/react/24/outline"
+import Link from "next/link"
 
 
 const page = async () => {
@@ -12,10 +13,10 @@ const page = async () => {
     <div className="p-12 justify-center flex flex-wrap gap-2">
 {
   Journals.map((journal:any)=>(
-    <div key={journal.id} className="flex border-2 w-[45%] justify-between p-2 border-black bg-yellow-300">
+    <Link href = {`/Journals/${journal.id}`} key={journal.id} className="flex border-2 w-[45%] justify-between p-2 border-black bg-yellow-300">
         <p className="text-xl font-bold">{journal.title}</p>
         <p>{journal.content.slice(0,20)}...</p>
-    </div>
+    </Link>
   ))
 }
     </div>
