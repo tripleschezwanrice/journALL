@@ -13,26 +13,26 @@ const Sidebar = () => {
     const pathname = usePathname()
 
     return (
-      <div className="h-screen w-[128px] border-r-2  flex flex-col justify-between py-12 text-sm">
+      <div className="h-screen w-[128px] border-r-2  flex flex-col justify-between py-12 text-sm font-extralight">
 
         <div className='flex flex-col gap-8'>
 
         <Link href="/" className={clsx(`flex flex-col items-center font-bold `,{
-          'border-l-8 border-yellow-400' : pathname === '/'
+          'border-l-4 border-purple-400' : pathname === '/'
         })}>
         <HomeIcon className="w-12"/>
         <p>(Home)</p>
         </Link>
 
         <Link href="/Journals" className={clsx(`flex flex-col items-center font-bold box-border`,{
-          'border-l-8 border-yellow-400' : pathname === '/Journals'
+          'border-l-4 border-purple-400' : pathname === '/Journals'
         })}>
         <BookOpenIcon className="w-12"/>
         <p>(Journals)</p>
         </Link>
 
         <Link href="/Create" className={clsx(`flex flex-col items-center font-bold `,{
-          'border-l-8 box-border border-yellow-400' : pathname === '/Create'
+          'border-l-4 border-purple-400' : pathname === '/Create'
         })}>
         <PencilIcon className="w-12"/>
         <p>(Create)</p>

@@ -1,20 +1,25 @@
 "use client"
 
-import { getJournalById, updateJournal } from "@/data/actions";
+import { deleteJournal, getJournalById, updateJournal } from "@/data/actions";
+import { TrashIcon } from "@heroicons/react/24/outline";
 import { useState, useEffect } from "react";
+
 
 export default function Page({ params }: { params: { id: string } }) {
   // Fetch initial journal data
   const [journal, setJournal] = useState({
     title: "",
     content: "",
+    createdat:""
   });
+
+
 
   useEffect(() => {
     const fetchJournal = async () => {
       const journalData = await getJournalById(params.id);
       console.log(journalData[0])
-      setJournal({title:journalData[0].title,content:journalData[0].content});
+      setJournal({title:journalData[0].title,content:journalData[0].content,createdat:journalData[0].createdat});
     };
 
     fetchJournal();
@@ -40,11 +45,13 @@ export default function Page({ params }: { params: { id: string } }) {
   };
 
   return (
-    <div className="h-screen w-full flex justify-center bg-gray-100">
+    <div className="h-screen w-full flex justify-center">
       <form
         onSubmit={handleSubmit}
         className="flex flex-col w-[90%] h-screen py-12 px-4 rounded text-3xl"
       >
+         <div className="flex gap-4">
+        <div className="flex border-2 border-white items-center justify-between w-full gap-4">
         <input
           name="title"
           type="text"
@@ -52,19 +59,31 @@ export default function Page({ params }: { params: { id: string } }) {
           value={journal.title}
           onChange={handleInputChange}
           placeholder="Title"
-          className="w-full p-2 mb-4 rounded-none outline-none border-b-2"
+          className=" p-2 rounded-none outline-none bg-transparent w-[80%]"
         />
+        
+        <p className="text-xl w-fit p-2">
+         {journal.createdat.toString().slice(4,15)}
+        </p>
+      
+
+        </div>
+        <TrashIcon className="w-12 hover:text-red-600" onClick={()=>{deleteJournal(params.id)}}/>
+       
+
+        </div>
+
         <textarea
           name="content"
           value={journal.content}
           onChange={handleInputChange}
           placeholder="Content"
           required
-          className="w-full p-2 mb-4 h-screen text-xl outline-none rounded underline-offset-8 underline"
+          className="w-full p-2 mb-4 bg-transparent h-screen text-xl outline-none rounded border-2 border-white mt-2"
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="bg-purple-400 text-white p-2 rounded hover:bg-purple-500"
         >
           Save
         </button>

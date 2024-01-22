@@ -75,7 +75,7 @@ LIMIT 6;
 
 
 
-export async function updateJournal(id:string, journal:{ title: string; content: string}){
+export async function updateJournal(id:string, journal:{ title: string; content: string; createdat:string}){
 
   
 const timestamp = Date.now();
@@ -107,4 +107,14 @@ WHERE id = ${id};
 
   console.log('DONE')
 
+}
+
+export async function deleteJournal(id:string){
+  await sql`
+  DELETE from journals
+  where id = ${id}
+  `
+
+  revalidatePath('/Journals')
+  redirect('/Journals')
 }
