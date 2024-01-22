@@ -8,7 +8,7 @@ export default function Home() {
   const signin = false;
   // console.log(exampleJournal);
   return (
-    <div className=" h-screen grid justify-center items-center">
+    <div className=" h-screen grid justify-center items-center fixed">
       <div className="flex flex-col">
      
      

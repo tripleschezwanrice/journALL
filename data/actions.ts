@@ -66,7 +66,7 @@ FROM journals
 ORDER BY createdat DESC
 LIMIT 6;
   `
-
+  
   return journals.rows;
 }
 
@@ -116,5 +116,6 @@ export async function deleteJournal(id:string){
   `
 
   revalidatePath('/Journals')
+  revalidatePath('/Create')
   redirect('/Journals')
 }

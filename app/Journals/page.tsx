@@ -17,7 +17,7 @@ const page = async () => {
 
 <div className="w-full flex justify-between items-center py-4 m-2">
       <p className="text-6xl font-bold">Memories</p>
-      <Link href='/Create' className="border-2 border-purple-400 rounded-full px-4 py-2">
+      <Link href='/Create' className="border-2 border-purple-400 hover:bg-purple-400 hover:text-black duration-200   rounded-full px-4 py-2">
         <div className="flex gap-2 items-center">
         <PlusIcon className="w-7"/>
           <p className="text-xl">
@@ -30,12 +30,11 @@ const page = async () => {
 {
   Journals.map((journal:any)=>(
     <Link href = {`/Journals/${journal.id}`} key={journal.id} className={`flex w-[49%] min-h-[50vh] max-h-[50vh] m-1 justify-between p-2 ${colors[(i++)%4]} rounded-xl text-black`}>
-      <div className="w-full">
+      <div className="w-full overflow-y-auto">
         <div className="flex justify-between w-full items-center mb-3">
         <p className="text-5xl font-bold">{journal.title}</p>
-        <div className="font-bold text-lg text-center">{journal.createdat.toString().slice(4,10)}</div>
         </div>
-        <p className="text-xl text-balance">{journal.content.slice(0,452)}...</p>
+        <p className="text-xl">{journal.content}</p>
       </div>
     </Link> ))
 }

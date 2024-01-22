@@ -1,19 +1,17 @@
 "use client"
 
-import { HomeIcon, UserIcon } from "@heroicons/react/24/outline"
-import { BookOpenIcon } from "@heroicons/react/24/outline"
-import { PencilIcon } from "@heroicons/react/24/outline"
+import { UserIcon } from "@heroicons/react/20/solid"
+import { ChatBubbleOvalLeftEllipsisIcon, HomeIcon, PencilIcon } from "@heroicons/react/24/solid"
 import clsx from "clsx"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-
 
 const Sidebar = () => {
 
     const pathname = usePathname()
 
     return (
-      <div className="h-screen w-[128px] border-r-2  flex flex-col justify-between py-12 text-sm font-extralight">
+      <div className="h-screen w-[128px] border-r border-gray-500 flex flex-col justify-between py-12 text-sm font-extralight fixed top-0 left-0">
 
         <div className='flex flex-col gap-8'>
 
@@ -27,8 +25,8 @@ const Sidebar = () => {
         <Link href="/Journals" className={clsx(`flex flex-col items-center font-bold box-border`,{
           'border-l-4 border-purple-400' : pathname === '/Journals'
         })}>
-        <BookOpenIcon className="w-12"/>
-        <p>(Journals)</p>
+        <ChatBubbleOvalLeftEllipsisIcon className="w-12"/>
+        <p>(Memories)</p>
         </Link>
 
         <Link href="/Create" className={clsx(`flex flex-col items-center font-bold `,{

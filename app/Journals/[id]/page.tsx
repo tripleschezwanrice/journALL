@@ -51,7 +51,7 @@ export default function Page({ params }: { params: { id: string } }) {
         className="flex flex-col w-[90%] h-screen py-12 px-4 rounded text-3xl"
       >
          <div className="flex gap-4">
-        <div className="flex border-2 border-white items-center justify-between w-full gap-4">
+        <div className="flex border-2 border-white items-center justify-between  rounded-xl w-full gap-4">
         <input
           name="title"
           type="text"
@@ -59,7 +59,7 @@ export default function Page({ params }: { params: { id: string } }) {
           value={journal.title}
           onChange={handleInputChange}
           placeholder="Title"
-          className=" p-2 rounded-none outline-none bg-transparent w-[80%]"
+          className=" p-2 outline-none  bg-transparent w-[80%]"
         />
         
         <p className="text-xl w-fit p-2">
@@ -79,11 +79,11 @@ export default function Page({ params }: { params: { id: string } }) {
           onChange={handleInputChange}
           placeholder="Content"
           required
-          className="w-full p-2 mb-4 bg-transparent h-screen text-xl outline-none rounded border-2 border-white mt-2"
+          className="w-full rounded-xl p-2 mb-4 bg-transparent h-screen text-xl outline-none border-2 border-white mt-2"
         />
         <button
           type="submit"
-          className="bg-purple-400 text-white p-2 rounded hover:bg-purple-500"
+          className="border-2 border-purple-400 hover:bg-purple-400 hover:text-black duration-200   rounded-xl px-4 py-2"
         >
           Save
         </button>

@@ -8,7 +8,28 @@ body{
 }
 
 ::selection {
-    background-color: #ffcc00; /* Set your desired background color */
+    background-color: rgb(192 132 252 ); /* Set your desired background color */
     color: #000; /* Set your desired text color */
   }
   
+
+  /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: 6px;
+    scrollbar-color: transparent #ffffff;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+  }
