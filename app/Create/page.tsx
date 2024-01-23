@@ -13,7 +13,7 @@ console.log(last6)
 
 
 
-const colors = ["yellow-400","red-400","violet-400","blue-400"]
+const colors = ["border-yellow-400","border-red-400","border-violet-400","border-blue-400"]
 const bgcolors = ["hover:bg-yellow-400","hover:bg-red-400","hover:bg-violet-400","hover:bg-blue-400"]
 
 
@@ -52,7 +52,7 @@ let j = 0;
           
           {
             last6.map((journal:any)=>(
-              <Link href = {`Journals/${journal.id}`} key={journal.id} className={`mb-2 p-2 text-lg text-white border-2 ${"border-"+colors[(i++)%4]} ${bgcolors[(j++)%4]} hover:text-black duration-200 rounded-xl flex justify-between`}>
+              <Link href = {`Journals/${journal.id}`} key={journal.id} className={`mb-2 p-2 text-lg text-white border-2 ${colors[(i++)%4]} ${bgcolors[(j++)%4]} hover:text-black duration-200 rounded-xl flex justify-between`}>
                 <p>
                   {journal.title}
                 </p>
