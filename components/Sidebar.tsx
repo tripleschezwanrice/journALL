@@ -1,10 +1,12 @@
 "use client"
 
-import { UserIcon } from "@heroicons/react/20/solid"
-import { ChatBubbleOvalLeftEllipsisIcon, HomeIcon, PencilIcon } from "@heroicons/react/24/solid"
+import { HomeIcon, PencilIcon, UserCircleIcon, UserIcon } from "@heroicons/react/24/outline"
+import { ChatBubbleOvalLeftIcon } from "@heroicons/react/24/outline"
 import clsx from "clsx"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname } from "next/navigation" 
+
+
 
 const Sidebar = () => {
 
@@ -18,21 +20,21 @@ const Sidebar = () => {
         <Link href="/" className={clsx(`flex flex-col items-center font-bold `,{
           'border-l-4 border-purple-400' : pathname === '/'
         })}>
-        <HomeIcon className="w-12"/>
+        <HomeIcon className="w-10 font-bold"/>
         <p>(Home)</p>
         </Link>
 
         <Link href="/Journals" className={clsx(`flex flex-col items-center font-bold box-border`,{
           'border-l-4 border-purple-400' : pathname === '/Journals'
         })}>
-        <ChatBubbleOvalLeftEllipsisIcon className="w-12"/>
+        <ChatBubbleOvalLeftIcon className="w-10"/>
         <p>(Memories)</p>
         </Link>
 
         <Link href="/Create" className={clsx(`flex flex-col items-center font-bold `,{
           'border-l-4 border-purple-400' : pathname === '/Create'
         })}>
-        <PencilIcon className="w-12"/>
+        <PencilIcon className="w-10"/>
         <p>(Create)</p>
         </Link>
 
@@ -43,7 +45,7 @@ const Sidebar = () => {
         <Link href="/login" className={clsx(`flex flex-col items-center font-bold `,{
           'outline-yellow-400 outline-8 ouline' : pathname === '/login'
         })}>
-        <UserIcon className="w-12"/>
+        <UserIcon className="w-10"/>
         <p>(Log In)</p>
         </Link>
         </div>

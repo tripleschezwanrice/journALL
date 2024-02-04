@@ -15,10 +15,7 @@ body{
 
   /* ===== Scrollbar CSS ===== */
   /* Firefox */
-  * {
-    scrollbar-width: 6px;
-    scrollbar-color: transparent #ffffff;
-  }
+ 
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {

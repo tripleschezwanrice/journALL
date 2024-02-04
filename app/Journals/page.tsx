@@ -51,14 +51,16 @@ const page = async () => {
     <div className="mt-12 flex flex-wrap  max-w-[80%] mx-auto">
 
 <div className="w-full flex justify-between items-center py-4 m-2">
-      <p className="text-6xl font-bold">Memories</p>
-      <Link href='/Create' className="border-2 border-purple-400 hover:bg-purple-400 hover:text-black duration-200   rounded-full px-4 py-2">
-        <div className="flex gap-2 items-center">
-        <PlusIcon className="w-7"/>
-          <p className="text-xl">
-          New</p>
-          </div>
-        </Link>
+  <p className="text-6xl font-bold">Memories</p>
+
+  <div className=" bg-gradient-to-r from-white to-purple-400 w-full mx-4 h-[2px]"></div>
+
+  <Link href='/Create' className="border-2 border-purple-400 hover:bg-purple-400 hover:text-black duration-200 rounded-full px-4 py-2">
+    <div className="flex gap-2 items-center">
+      <PlusIcon className="w-7"/>
+      <p className="text-xl">New</p>
+    </div>
+  </Link>
 </div>
 
 <p className="w-full italic m-2 text-gray-400">today</p>

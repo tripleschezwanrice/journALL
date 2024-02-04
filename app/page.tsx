@@ -3,7 +3,8 @@ import Stats from "@/components/Stats";
 import Link from "next/link";
 
 
-export default function Home() {
+export default async function Home() {
+
 
   const signin = false;
   // console.log(exampleJournal);
